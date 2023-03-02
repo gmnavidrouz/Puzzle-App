@@ -11,46 +11,31 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Drag the Images to complete the puzzle")
-            HStack {
-                Picture(imageName: "1")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "2")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "3")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
+            ZStack {
+                Picture(imageName: "1",
+                        endLocation: CGPointMake(-120, -120))
+                Picture(imageName: "2",
+                        endLocation: CGPointMake(0, -120))
+                Picture(imageName: "3",
+                        endLocation: CGPointMake(120, -120))
+                Picture(imageName: "4",
+                        endLocation: CGPointMake(-120, 0))
+                Picture(imageName: "5",
+                        endLocation: CGPointMake(0, 0))
+                Picture(imageName: "6",
+                        endLocation: CGPointMake(120, 0))
+                Picture(imageName: "7",
+                        endLocation: CGPointMake(-120, 120))
+                Picture(imageName: "8",
+                        endLocation: CGPointMake(0, 120))
+                Picture(imageName: "9",
+                        endLocation: CGPointMake(120, 120))
             }
-            HStack {
-                Picture(imageName: "4")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "5")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "6")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-
-            }
-            HStack {
-                Picture(imageName: "7")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "8")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-                Picture(imageName: "9")
-                    .position(x: CGFloat.random(in: 0...100), y: CGFloat.random(in: 0...400))
-                    
-            }
-            .frame(width: 250, height: 500)
-            
+                
         }
     }
+    
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
